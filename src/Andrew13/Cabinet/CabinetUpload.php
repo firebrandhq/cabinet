@@ -3,14 +3,13 @@
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model as Eloquent;
 use Doctrine\Common\Proxy\Exception\InvalidArgumentException;
+use Illuminate\Support\Facades\Config;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Config;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Intervention\Image\ImageManagerStatic as Image;
-
 
 class CabinetUpload extends Eloquent
 {
