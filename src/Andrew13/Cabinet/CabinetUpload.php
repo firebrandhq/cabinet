@@ -57,13 +57,15 @@ class CabinetUpload extends Eloquent
 
         $this->size = $file->getSize();
 
-        list($this->path, $this->filename) = $this->upload($file);
+        list($path, $this->filename) = $this->upload($file);
+
+        $this->path = $this->getPublicUploadFolder();
 
         $this->save();
 
         // Check to see if image thumbnail generation is enabled
         if(static::$app['config']->get('cabinet::image_manipulation')) {
-            $thumbnails = $this->generateThumbnails($this->path, $this->filename);
+            $thumbnails = $this->generateThumbnails($path, $this->filename);
             $uploads = array();
             foreach($thumbnails as $thumbnail) {
                 $upload = new $this;
@@ -164,6 +166,10 @@ class CabinetUpload extends Eloquent
         }
 
         return $folder;
+    }
+
+    public function getPublicUploadFolder() {
+        return static::$app['config']->get('cabinet::upload_folder_public_path') . $this->dateFolderPath;
     }
 
     /**
