@@ -1,6 +1,6 @@
 {
-    "name": "andrewelkins/cabinet",
-    "description": "Laravel 4 file upload package.",
+    "name": "firebrandhq/cabinet",
+    "description": "Laravel 5 file upload package.",
     "keywords": ["laravel","illuminate","file","uploads","jquery", "js"],
     "license": "MIT",
     "authors": [
@@ -15,8 +15,8 @@
         "intervention/image": "2.0.x"
 },
     "suggest": {
-        "zizaco/confide":"add Easy User management to Laravel 4",
-        "zizaco/entrust":"add Role-based Permissions to Laravel 4"
+        "zizaco/confide":"add Easy User management to Laravel 5",
+        "zizaco/entrust":"add Role-based Permissions to Laravel 5"
     },
     "autoload": {
         "classmap": [
